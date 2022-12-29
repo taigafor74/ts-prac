@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: rgb(255, 255, 255);
+    }
+    .con {
+      border: 10px solid black;
+      border-radius: 30px;
+      width: 360px;
+      height: 420px;
+      background-color: #b7d4a8;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .screen {
+      border: 2px solid black;
+      width: 304px;
+      height: 304px;
+      position: relative;
+    }
+    .score {
+      width: 100%;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+    }
+    .snake div {
+      width: 10px;
+      height: 10px;
+      background-color: black;
+      border: 1px solid #b7d4a8;
+      position: absolute;
+    }
+    .food {
+      position: absolute;
+      left: 40px;
+      top: 100px;
+      width: 10px;
+      height: 10px;
+      border: 1px solid #b7d4a8;
+      display: flex;
+      flex-flow: row wrap;
+    }
+    .food div {
+      width: 4px;
+      height: 4px;
+      transform: rotate(45deg);
+      background-color: black;
+    }
+  </style>
+  <body>
+    <div class="con">
+      <div class="screen">
+        <div class="food">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="snake">
+          <div></div>
+        </div>
+      </div>
+      <div class="score">
+        <span class="scoreEle">SCORE:0</span>
+        <span class="levelEle">LEVEL:1</span>
+      </div>
+    </div>
+  </body>
+  <script src="../dist/snake/index.js"></script>
+</html>

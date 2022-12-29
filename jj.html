@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .con {
+      width: 900px;
+      height: 900px;
+      background-color: rgb(218, 196, 189);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .circle {
+      width: 25px;
+      height: 25px;
+      background-color: orangered;
+      border-radius: 25px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transition: all 1s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .circle:hover {
+      height: 100px;
+    }
+  </style>
+  <body>
+    <div class="con">
+      <div class="circle"></div>
+    </div>
+  </body>
+  <script>
+    let body = document.querySelector("body");
+    let inner = document.createElement("div");
+    let vs = document.querySelector("video");
+    let arr = [];
+    inner.style.position = "fixed";
+    inner.style.right = 0;
+    inner.style.width = "35px";
+    inner.style.height = "35px";
+    inner.style.borderRadius = "35px";
+    inner.style.backgroundColor = "orangered";
+    inner.style.top = "50%";
+    inner.style.fontSize = "27px";
+    inner.innerText = "+";
+    inner.style.display = "flex";
+    inner.style.boxSizing = "border-box";
+    inner.style.padding = "0";
+    inner.style.margin = "0";
+    inner.style.flexDirection = "column";
+    inner.style.justifyContent = "space-between";
+    inner.style.alignItems = "center";
+    inner.style.transition = "all 1s";
+    inner.style.overflow = "hidden";
+    inner.style.userSelect = "none";
+    inner.style.cursor = "pointer";
+    body.appendChild(inner);
+    for (let i = 0; i < 8; i++) {
+      arr.push(document.createElement("div"));
+      arr[i].innerText = `${1 + i * 0.25}`;
+      arr[i].style.fontSize = "0.2px";
+      arr[i].style.display = "flex";
+      arr[i].style.alignItems = "center";
+      arr[i].style.justifyContent = "center";
+      arr[i].style.width = "100%";
+      arr[i].style.height = "100%";
+      arr[i].style.borderTop = "1px solid black";
+      arr[i].style.transition + "all 1s";
+      arr[i].onmouseenter = function () {
+        this.style.backgroundColor = "red";
+        this.style.userSelect = "none";
+      };
+      arr[i].addEventListener("mouseover", () => {
+        this.style.cursor = "hand";
+      });
+      arr[i].onmouseleave = function () {
+        arr[i].style.backgroundColor = "orangered";
+      };
+      arr[i].addEventListener("click", () => {
+        vs.playbackRate = `${1 + i * 0.25}`;
+      });
+      inner.appendChild(arr[i]);
+    }
+    inner.onmouseenter = function () {
+      inner.style.height = "250px";
+    };
+    inner.onmouseleave = function () {
+      inner.style.height = "35px";
+    };
+  </script>
+</html>

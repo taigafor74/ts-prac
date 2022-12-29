@@ -1,0 +1,12 @@
+{
+  "include": ["./**/*"],
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "outDir": "./dist",
+    "allowJs": false,
+    "checkJs": false,
+    "removeComments": true,
+    "noEmit": false
+  }
+}
